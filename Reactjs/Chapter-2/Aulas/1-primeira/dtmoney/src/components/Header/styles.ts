@@ -14,12 +14,13 @@ export const Content = styled.div`
   justify-content: space-between;
 
   button {
+    height: 3rem;
+    padding: 0 2rem;
+    font-size: 1rem;
     background-color: var(--blue-light);
     color: #fff;
     border: 0;
     border-radius: 0.25rem;
-    padding: 0 2rem;
-    height: 3rem;
     transition: filter 0.2s;
 
     &:hover {
