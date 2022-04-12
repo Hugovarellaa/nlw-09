@@ -1,8 +1,13 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { api } from "../../services/axios";
 import { Container } from "./styles";
 
 const TransactionTable: React.FC = () => {
+  const [transaction, setTransaction] = useState([]);
+
+  useEffect(() => {
+    api.get("/transactions").then((data) => console.log(data));
+  }, []);
   return (
     <Container>
       <table>
