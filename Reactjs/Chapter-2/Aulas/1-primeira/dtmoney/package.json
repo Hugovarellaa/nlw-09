@@ -42,8 +42,11 @@
     ]
   },
   "devDependencies": {
+    "@types/react-modal": "^3.13.1",
     "@types/styled-components": "^5.1.25",
     "miragejs": "^0.1.43",
+    "polished": "^4.2.2",
+    "react-modal": "^3.14.4",
     "styled-components": "^5.3.5"
   }
 }
