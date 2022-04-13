@@ -6,21 +6,24 @@ export const Container = styled.header`
 
 export const Content = styled.div`
   max-width: 1120px;
+  width: 100%;
+  padding: 2rem 2rem 8rem;
   margin: 0 auto;
 
-  padding: 2rem 2rem 8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   button {
-    height: 3rem;
-    padding: 0 2rem;
-    font-size: 1rem;
     background-color: var(--blue-light);
     color: #fff;
     border: 0;
     border-radius: 0.25rem;
+    padding: 0 2rem;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: normal;
+
     transition: filter 0.2s;
 
     &:hover {

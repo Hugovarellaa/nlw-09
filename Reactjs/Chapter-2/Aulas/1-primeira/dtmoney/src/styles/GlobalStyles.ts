@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-   :root{
+  :root{
         --background: #f0f2f5;
         --red: #E52E4D;
         --blue: #5429cc;
@@ -18,18 +18,17 @@ export const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
     }
 
-
     body {
-      background-color: var(--background);
+      background: var(--background);
       -webkit-font-smoothing: antialiased;
     }
 
-    body , input , textarea, button {
-      font-family: "Poppins" , sans-serif;
+    body , input, button, textarea {
+      font-family: "Poppins" ,sans-serif;
       font-weight: 400;
     }
 
-    h1, h2, h3, h4, h5, h6 , strong{
+    h1, h2 , h3, h4, h5, h6, strong {
       font-weight: 600;
     }
 
@@ -37,57 +36,21 @@ export const GlobalStyle = createGlobalStyle`
       cursor: pointer;
     }
 
-    [disabled] {
-      opacity: 0.6;
-      cursor: not-allowed;
+    a{
+      text-decoration: none;
+      color: inherit
     }
 
-    /* Modal */
 
-    .react-modal-container{
-      background-color: rgba(0, 0, 0, 0.5);
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .react-modal-content{
-      max-width: 576px;
-      width: 100%;
-      background: var(--background);
-      padding: 3rem;
-      position: relative;
-      border-radius: 0.25rem;
-    }
-
-    .close-icon {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: transparent;
-      border: 0;
-      transition: filter .2s;
-
-      &:hover{
-        filter: brightness(0.2);
-      }
-    }
-
-/* MEDIA */
 
     @media(max-width:1080px){
       html{
         font-size: 93.75%;
       }
     }
-    @media(max-width: 720px){
+    @media(max-width:720px){
       html{
-        font-size: 87.5%;
+        font-size:87.5%;
       }
     }
 `;
