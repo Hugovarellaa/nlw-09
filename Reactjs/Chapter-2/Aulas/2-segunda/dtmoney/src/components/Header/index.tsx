@@ -1,15 +1,19 @@
 import React from "react";
-
 import logoImg from "../../assets/logo.svg";
-
 import { Container, Content } from "./styles";
 
-const Header: React.FC = () => {
+interface Props {
+  handleOpenModal: () => void;
+}
+
+const Header: React.FC<Props> = ({ handleOpenModal }) => {
   return (
     <Container>
       <Content>
         <img src={logoImg} alt="Logo do dtmoney" />
-        <button type="button">Nova transação</button>
+        <button type="button" onClick={handleOpenModal}>
+          Nova transação
+        </button>
       </Content>
     </Container>
   );
