@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Content } from "./styles";
 
 import logoImg from "../../assets/logo.svg";
-import { useTransaction } from "../../TransactionContext";
+import { useTransaction } from "../../hooks/TransactionContext";
 
 const Header: React.FC = () => {
   const { handleOpenModal } = useTransaction();
