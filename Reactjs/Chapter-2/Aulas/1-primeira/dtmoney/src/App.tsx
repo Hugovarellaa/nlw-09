@@ -1,31 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import Header from "./components/Header";
 import Dashboard from "./components/Dashboard";
 import Modal from "react-modal";
 import TransactionModal from "./components/TransactionModal";
+import { TransactionProvider } from "./TransactionContext";
 
 Modal.setAppElement("#root");
 
 const App: React.FC = () => {
-  const [isOpenModal, setIsOpenModal] = useState(false);
-
-  function handleOpenModal() {
-    setIsOpenModal(true);
-  }
-  function handleCloseModal() {
-    setIsOpenModal(false);
-  }
   return (
-    <>
-      <Header handleOpenModal={handleOpenModal} />
+    <TransactionProvider>
+      <Header />
       <Dashboard />
-      <TransactionModal
-        handleCloseModal={handleCloseModal}
-        isOpenModal={isOpenModal}
-      />
+      <TransactionModal />
       <GlobalStyles />
-    </>
+    </TransactionProvider>
   );
 };
 
