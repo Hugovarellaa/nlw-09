@@ -1,14 +1,12 @@
 import React from "react";
 
 import LogoImg from "../../assets/logo.svg";
+import { useTransaction } from "../../hooks/useTransaction";
 
 import { Container, Content } from "./styles";
 
-interface Props {
-  handleOpenModal: () => void;
-}
-
-const Header: React.FC<Props> = ({ handleOpenModal }) => {
+const Header: React.FC = () => {
+  const { handleOpenModal } = useTransaction();
   return (
     <Container>
       <Content>
