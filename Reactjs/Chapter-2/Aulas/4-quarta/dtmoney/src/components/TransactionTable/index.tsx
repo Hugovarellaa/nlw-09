@@ -1,7 +1,5 @@
-import { access } from "fs";
-import React, { useEffect } from "react";
+import React from "react";
 import { useTransaction } from "../../hooks/useTransaction";
-import { api } from "../../services/api";
 
 import { Container } from "./styles";
 
