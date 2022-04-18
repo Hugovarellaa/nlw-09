@@ -8,7 +8,7 @@ const Dashboard: React.FC = () => {
   return (
     <Container>
       <Summary />
-      {/* <TransactionTable /> */}
+      <TransactionTable />
     </Container>
   );
 };
