@@ -7,7 +7,7 @@ const App: React.FC = () => {
   return (
     <>
       <Header />
-      {/* <Dashboard /> */}
+      <Dashboard />
       <GlobalStyles />
     </>
   );

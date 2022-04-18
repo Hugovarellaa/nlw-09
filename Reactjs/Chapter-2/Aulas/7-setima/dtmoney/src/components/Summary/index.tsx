@@ -1,16 +1,37 @@
-import { ReactNode } from 'react';
+import React from "react";
 
-import { Container } from './styles';
+import incomeImg from "../../assets/income.svg";
+import outcomeImg from "../../assets/outcome.svg";
+import totalImg from "../../assets/total.svg";
 
-interface SummaryProps {
-  children: ReactNode;
-}
+import { Container } from "./styles";
 
-function Summary({ children }: SummaryProps) {
+const Summary: React.FC = () => {
   return (
     <Container>
-      <h1>Summary</h1>
-      {children}
+      <div>
+        <header>
+          <p>Entradas</p>
+          <img src={incomeImg} alt="Entradas" />
+        </header>
+        <strong>R$ 12.000,00</strong>
+      </div>
+
+      <div>
+        <header>
+          <p>Saidas</p>
+          <img src={outcomeImg} alt="Saidas" />
+        </header>
+        <strong>R$ 7.000,00</strong>
+      </div>
+
+      <div>
+        <header>
+          <p>Total</p>
+          <img src={totalImg} alt="Total" />
+        </header>
+        <strong>R$ 5.000,00</strong>
+      </div>
     </Container>
   );
 };
