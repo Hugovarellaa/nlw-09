@@ -1,22 +1,33 @@
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import Modal from "react-modal";
 
 import closeImg from "../../assets/close.svg";
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
+import { useTransaction } from "../../hooks/useTransaction";
 
 import { Container, Content, RadioBox } from "./styles";
 
-interface Props {
-  modalIsOpen: boolean;
-  handleCloseModal: () => void;
-}
+const TransactionModal: React.FC = () => {
+  const { modalIsOpen, handleCloseModal, createTransaction } = useTransaction();
 
-const TransactionModal: React.FC<Props> = ({
-  modalIsOpen,
-  handleCloseModal,
-}) => {
   const [type, setType] = useState("deposit");
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
+  const [amount, setAmount] = useState(0);
+
+  async function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+    const data = { title, amount, type, category };
+
+    await createTransaction(data);
+    handleCloseModal();
+    setTitle("");
+    setAmount(0);
+    setType("deposit");
+    setCategory("");
+  }
+
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -31,10 +42,20 @@ const TransactionModal: React.FC<Props> = ({
       >
         <img src={closeImg} alt="Botao de fechar modal" />
       </button>
-      <Container>
+      <Container onSubmit={handleSubmit}>
         <h2>Cadastrar transação</h2>
-        <input type="text" placeholder="Titulo" />
-        <input type="number" placeholder="Valor" />
+        <input
+          type="text"
+          placeholder="Titulo"
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Valor"
+          value={amount}
+          onChange={(event) => setAmount(Number(event.target.value))}
+        />
         <Content>
           <RadioBox
             type="button"
@@ -55,7 +76,12 @@ const TransactionModal: React.FC<Props> = ({
             <span>Saidas</span>
           </RadioBox>
         </Content>
-        <input type="text" placeholder="Categoria" />
+        <input
+          type="text"
+          placeholder="Categoria"
+          value={category}
+          onChange={(event) => setCategory(event.target.value)}
+        />
         <button type="submit">Cadastrar</button>
       </Container>
     </Modal>
