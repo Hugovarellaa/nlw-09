@@ -10,6 +10,8 @@
     "@types/node": "^16.11.27",
     "@types/react": "^18.0.5",
     "@types/react-dom": "^18.0.1",
+    "axios": "^0.26.1",
+    "miragejs": "^0.1.43",
     "polished": "^4.2.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
