@@ -73,7 +73,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         (product) => product.id === productId
       );
 
-      if (productExists > 0) {
+      if (productExists >= 0) {
         updateCart.splice(productExists, 1);
         setCart(updateCart);
         localStorage.setItem("@RocketShoes:cart", JSON.stringify(updateCart));
