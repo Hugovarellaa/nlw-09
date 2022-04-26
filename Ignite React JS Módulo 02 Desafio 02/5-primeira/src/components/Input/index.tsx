@@ -12,8 +12,8 @@ import { IconBaseProps } from 'react-icons/lib';
 
 interface InputProps {
   name: string;
-  placeholder: string;
-  icon: React.ComponentType<IconBaseProps>
+  placeholder?: string;
+  icon?: React.ComponentType<IconBaseProps>
 }
 
 export default function Input({ name, icon: Icon, ...rest }: InputProps){
