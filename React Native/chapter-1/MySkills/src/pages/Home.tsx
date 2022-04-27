@@ -24,7 +24,7 @@ export function Home() {
       id: String(new Date().getTime()),
       name: newSkill,
     };
-
+    console.log(data);
     setMySkills((oldState) => [...oldState, data]);
   }
 
