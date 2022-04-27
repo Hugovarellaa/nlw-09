@@ -1,16 +1,27 @@
 import React, { useState } from "react";
 import { StyleSheet, SafeAreaView, FlatList } from "react-native";
+
 import { Button } from "../components/button";
 import { Skill } from "../components/Skill";
 import { SkillCard } from "../components/SkillCard";
 import { TextTitle } from "../components/TextTitle";
 
+type SkillData = {
+  id: string;
+  name: string;
+}[];
+
 export function Home() {
   const [newSkill, setNewSkill] = useState("");
-  const [mySkills, setMySkills] = useState([]);
+  const [mySkills, setMySkills] = useState<SkillData>([]);
 
   function handleAddNewSkill() {
-    setMySkills((oldState) => [...oldState, newSkill]);
+    const data = {
+      id: String(new Date().getTime()),
+      name: newSkill,
+    };
+
+    setMySkills((oldState) => [...oldState, data]);
   }
 
   return (
@@ -20,7 +31,7 @@ export function Home() {
 
         <Skill setNewSkill={setNewSkill} />
 
-        <Button handleAddNewSkill={handleAddNewSkill} />
+        <Button onPress={handleAddNewSkill} />
 
         <TextTitle title="My Skills" />
 
@@ -35,7 +46,7 @@ export function Home() {
 
         <FlatList
           data={mySkills}
-          keyExtractor={(item) => item}
+          keyExtractor={(item) => item.id}
           renderItem={({ item }) => <SkillCard skill={item} />}
         />
       </SafeAreaView>
