@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, SafeAreaView } from "react-native";
+import { StyleSheet, SafeAreaView, FlatList } from "react-native";
 import { Button } from "../components/button";
 import { Skill } from "../components/Skill";
 import { SkillCard } from "../components/SkillCard";
@@ -24,9 +24,20 @@ export function Home() {
 
         <TextTitle title="My Skills" />
 
-        {mySkills.map((skill) => (
-          <SkillCard skill={skill} key={skill} />
-        ))}
+        {/* 
+          Para pouco itens esse metodo ainda vale
+
+          <ScrollView showsVerticalScrollIndicator={false}>
+            {mySkills.map((skill) => (
+              <SkillCard skill={skill} key={skill} />
+            ))}
+          </ScrollView> */}
+
+        <FlatList
+          data={mySkills}
+          keyExtractor={(item) => item}
+          renderItem={({ item }) => <SkillCard skill={item} />}
+        />
       </SafeAreaView>
     </>
   );
