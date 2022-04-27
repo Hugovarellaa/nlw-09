@@ -15,6 +15,10 @@ export function Home() {
   const [newSkill, setNewSkill] = useState("");
   const [mySkills, setMySkills] = useState<SkillData>([]);
 
+  function handleDeleteSkill(id: string) {
+    setMySkills((oldState) => oldState.filter((skill) => skill.id !== id));
+  }
+
   function handleAddNewSkill() {
     const data = {
       id: String(new Date().getTime()),
@@ -47,7 +51,12 @@ export function Home() {
         <FlatList
           data={mySkills}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <SkillCard skill={item} />}
+          renderItem={({ item }) => (
+            <SkillCard
+              skill={item}
+              onPress={() => handleDeleteSkill(item.id)}
+            />
+          )}
         />
       </SafeAreaView>
     </>
