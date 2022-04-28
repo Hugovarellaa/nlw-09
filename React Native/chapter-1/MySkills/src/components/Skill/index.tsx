@@ -1,7 +1,11 @@
 import React from "react";
-import { TextInput, StyleSheet, Platform } from "react-native";
+import { TextInput, StyleSheet, Platform, TextInputProps } from "react-native";
 
-export function Skill({ setNewSkill }) {
+interface SkillProps extends TextInputProps {
+  setNewSkill: (text: string) => void;
+}
+
+export function Skill({ setNewSkill }: SkillProps) {
   return (
     <TextInput
       style={styles.input}
