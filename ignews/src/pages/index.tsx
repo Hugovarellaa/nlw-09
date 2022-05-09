@@ -50,7 +50,6 @@ export const getStaticProps: GetStaticProps = async () => {
       currency: "USD",
     }).format(prices.unit_amount / 100),
   };
-  console.log(product);
   return {
     props: { product },
     revalidate: 60 * 60 * 24, //24hours
