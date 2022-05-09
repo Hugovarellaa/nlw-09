@@ -1,5 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Head from "next/head";
-import Header from "../components/Header";
+import styles from "./home.module.scss";
 
 export default function Home() {
   return (
@@ -7,7 +9,22 @@ export default function Home() {
       <Head>
         <title>Ignews | Home</title>
       </Head>
-      <Header />
+
+      <main className={styles.container}>
+        <section className={styles.hero}>
+          <span>👏 Hey, welcome</span>
+          <h1>
+            News about <br />
+            the <span>React</span> world
+          </h1>
+          <p>
+            Get acess to all the publications
+            <br />
+            <span>For $9.90 month</span>
+          </p>
+        </section>
+        <img src="/images/avatar.svg" alt="Girl coding" />
+      </main>
     </>
   );
 }
