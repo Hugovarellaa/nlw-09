@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
+import { SigninButton } from "../SignInButton";
 import styles from "./styles.module.scss";
-
 
 export function Header() {
   return (
@@ -13,7 +13,7 @@ export function Header() {
             Post
           </a>
         </nav>
-        {/* botao de login */}
+        <SigninButton />
       </div>
     </header>
   );
