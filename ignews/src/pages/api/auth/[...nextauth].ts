@@ -9,6 +9,11 @@ export default NextAuth({
     GithubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
+      authorization: {
+        params: {
+          scope: "read:user",
+        },
+      },
     }),
     // ...add more providers here
   ],
@@ -21,22 +26,11 @@ export default NextAuth({
           q.If(
             q.Not(
               q.Exists(
-                q.Match(
-                  q.Index("user_by_email"),
-                  q.Casefold(user.email)
-                )
+                q.Match(q.Index("user_by_email"), q.Casefold(user.email))
               )
             ),
-            q.Create(
-              q.Collection("users"),
-              { data : { email } }
-            ),
-            q.Get(
-              q.Match(
-                q.Index("user_by_email"),
-                q.Casefold(user.email)
-              )
-            )
+            q.Create(q.Collection("users"), { data: { email } }),
+            q.Get(q.Match(q.Index("user_by_email"), q.Casefold(user.email)))
           )
         );
 
@@ -47,16 +41,6 @@ export default NextAuth({
     },
     async redirect({ url, baseUrl }) {
       return baseUrl;
-    },
-    async session({ session, user, token }) {
-      session.accessToken = token.accessToken;
-      return session;
-    },
-    async jwt({ token, user, account, profile, isNewUser }) {
-      if (account) {
-        token.accessToken = account.access_token;
-      }
-      return token;
     },
   },
 });
