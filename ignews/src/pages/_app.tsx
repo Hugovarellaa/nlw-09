@@ -5,7 +5,7 @@ import "../styles/global.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <SessionProvider session={pageProps.session}>
+    <SessionProvider session={pageProps.session} refetchInterval={5 * 60}>
       <Header />
       <Component {...pageProps} />
     </SessionProvider>
