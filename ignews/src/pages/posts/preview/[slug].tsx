@@ -5,6 +5,7 @@ import { getPrismicClient } from "../../../services/prismic";
 import Head from "next/head";
 
 import styles from "../posts.module.scss";
+import Link from "next/link";
 
 interface Post {
   slug: string;
@@ -32,6 +33,12 @@ export default function PreviewPost({ post }: PreviewPostProps) {
             dangerouslySetInnerHTML={{ __html: post.content }}
             className={`${styles.post} ${styles.previewContent}`}
           />
+          <div className={styles.continueReading}>
+            Wanna continue reading?
+            <Link href="/">
+              <a>Subscribe now 🤗</a>
+            </Link>
+          </div>
         </article>
       </main>
     </>
