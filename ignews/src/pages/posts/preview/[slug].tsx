@@ -1,11 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
-import { getSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 import { RichText } from "prismic-dom";
 import { getPrismicClient } from "../../../services/prismic";
 import Head from "next/head";
 
 import styles from "../posts.module.scss";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 interface Post {
   slug: string;
@@ -19,6 +22,15 @@ interface PreviewPostProps {
 }
 
 export default function PreviewPost({ post }: PreviewPostProps) {
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (session?.activeSubscription) {
+      router.push(`/posts/${post.slug}`);
+    }
+  }, [session]);
+
   return (
     <>
       <Head>
