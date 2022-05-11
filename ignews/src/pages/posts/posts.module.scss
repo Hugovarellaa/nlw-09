@@ -4,43 +4,39 @@
   padding: 0 2rem;
 }
 
-.posts {
+.content {
   max-width: 720px;
   margin: 5rem auto 0;
 
-  a {
-    display: block;
-
-    & + a {
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--gray-600);
-    }
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
   }
 
   time {
-    display: flex;
-    align-items: center;
-
-    color: var(--gray-300);
-    font-size: 1rem;
-  }
-
-  strong {
     display: block;
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    line-height: 2rem;
-    transition: color 0.2s;
+    font-size: 1rem;
+    color: var(--gray-300);
+    margin-top: 1.5rem;
+  }
+}
 
-    &:hover {
-      color: var(--yellow-500);
-    }
+.post {
+  margin-top: 2rem;
+  line-height: 2rem;
+  font-size: 1.125rem;
+  color: var(--gray-100);
+
+  p,
+  ul {
+    margin: 1.5rem 9;
   }
 
-  p {
-    color: var(--gray-300);
-    margin-top: 0.5rem;
-    line-height: 1.625rem;
+  ul {
+    padding-left: 1.5rem;
+
+    li {
+      margin: 0.5rem 9;
+    }
   }
 }

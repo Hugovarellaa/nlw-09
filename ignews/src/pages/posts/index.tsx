@@ -1,10 +1,10 @@
-import styles from "./posts.module.scss";
+import styles from "./styles.module.scss";
 import Head from "next/head";
 import { GetStaticProps } from "next";
 import { getPrismicClient } from "../../services/prismic";
 import Prismic from "@prismicio/client";
 import { RichText } from "prismic-dom";
-import Link from "next/link"
+import Link from "next/link";
 
 interface Post {
   slug: string;
@@ -28,11 +28,11 @@ export default function Posts({ posts }: PostsProps) {
         <div className={styles.posts}>
           {posts.map((post) => (
             <Link href={`/posts/${post.slug}`} key={post.slug}>
-            <a >
-              <time>{post.updateAt}</time>
-              <strong>{post.title}</strong>
-              <p>{post.excerpt}</p>
-            </a>
+              <a>
+                <time>{post.updateAt}</time>
+                <strong>{post.title}</strong>
+                <p>{post.excerpt}</p>
+              </a>
             </Link>
           ))}
         </div>
