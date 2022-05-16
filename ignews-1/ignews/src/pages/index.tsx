@@ -1,12 +1,27 @@
-import Head from "next/head"
+import Head from "next/head";
+import styles from "./home.module.scss";
 
-export default function App(){
+export default function App() {
   return (
     <>
       <Head>
         <title>Home | Ignews</title>
       </Head>
-      <h1>Testando</h1>
+
+      <main className={styles.container}>
+        <section className={styles.hero}>
+          <span>👏 Hey, welcome</span>
+          <h1>
+            New about <br />
+            the <span>React</span> world.
+          </h1>
+          <p>
+            Get access to all the publications <br />{" "}
+            <span>for $9.90 month</span>
+          </p>
+        </section>
+        <img src="/images/avatar.svg" alt="Girl coding" />
+      </main>
     </>
-  )
+  );
 }
