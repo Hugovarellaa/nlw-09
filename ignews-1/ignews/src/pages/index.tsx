@@ -50,5 +50,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: { product },
+    revalidate: 60 * 60 * 24, // 24 hours
   };
 };
