@@ -1,5 +1,6 @@
 import { signIn, useSession } from "next-auth/react";
 import { api } from "../../services/axios";
+import { getStripeJs } from "../../services/stripe-js";
 import styles from "./styles.module.scss";
 
 export function SubscribeButton() {
@@ -10,10 +11,17 @@ export function SubscribeButton() {
       signIn("github");
       return;
     }
-    //Criar uma checkout sesssion no stripe
-     await api.post("subscribe");
-    
+    try {
+      //Criar uma checkout sesssion no stripe
+      const response = await api.post("subscribe");
+      const { sessionId } = response.data;
+      const stripe = await getStripeJs();
+      await stripe.redirectToCheckout({ sessionId });
+    } catch (error) {
+      console.log({ error: error.message });
+    }
   }
+
   return (
     <button
       type="button"
