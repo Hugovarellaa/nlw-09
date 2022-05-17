@@ -12,6 +12,7 @@ export default async (req: NextApiRequest, rest: NextApiResponse) => {
       //metadata: 
     })
 
+    
     const stripeCheckoutSession = await stripe.checkout.sessions.create({
       customer: stripeCustomer.id,
       payment_method_types: ["card"],
