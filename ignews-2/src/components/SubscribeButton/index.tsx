@@ -1,4 +1,5 @@
 import { signIn, useSession } from "next-auth/react";
+import { api } from "../../services/axios";
 import styles from "./styles.module.scss";
 
 export function SubscribeButton() {
@@ -10,6 +11,8 @@ export function SubscribeButton() {
       return;
     }
     //Criar uma checkout sesssion no stripe
+     await api.post("subscribe");
+    
   }
   return (
     <button
