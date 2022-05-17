@@ -16,6 +16,7 @@ export async function saveSubscriptions(
       q.Get(q.Match(q.Index("user_by_stripe_customer_id"), customerId))
     )
   );
+  
   const subscription = await stripe.subscriptions.retrieve(subscriptionId);
 
   const subscriptionData = {
