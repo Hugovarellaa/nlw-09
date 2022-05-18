@@ -9,7 +9,9 @@ export function SubscribeButton() {
       return;
     }
 
-    //checkoutSession stripe
+    //checkoutSession 
+    
+    
   }
 
   return (
