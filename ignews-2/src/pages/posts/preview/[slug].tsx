@@ -26,7 +26,7 @@ export default function PreviewPost({ post }: PreviewPostProps) {
     if (session?.activeSubscription) {
       router.push(`/posts/${post.slug}`);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
   return (
     <>
@@ -82,5 +82,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: { post },
+    revalidate: 60 * 60 * 24, //24 hours
   };
 };
