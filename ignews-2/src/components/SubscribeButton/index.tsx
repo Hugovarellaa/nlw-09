@@ -9,6 +9,7 @@ export function SubscribeButton() {
       signIn("github");
       return;
     }
+    
   }
   return (
     <button
