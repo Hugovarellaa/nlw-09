@@ -3,6 +3,7 @@ import { RichText } from "prismic-dom";
 import { getPrismicClient } from "../../../services/prismic";
 import Head from "next/head";
 import styles from "../post.module.scss";
+import Link from "next/link";
 
 interface PreviewPostProps {
   post: {
@@ -28,6 +29,13 @@ export default function PreviewPost({ post }: PreviewPostProps) {
             dangerouslySetInnerHTML={{ __html: post.content }}
             className={`${styles.post} ${styles.previewPost}`}
           />
+
+          <div className={styles.continueReading}>
+            wanna continue reading
+            <Link href="/">
+              <a>Subscribe now 🤗</a>
+            </Link>
+          </div>
         </article>
       </main>
     </>
