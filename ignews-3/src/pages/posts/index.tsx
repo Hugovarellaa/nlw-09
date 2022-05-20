@@ -1,4 +1,5 @@
 import Head from "next/head";
+import styles from "./styles.module.scss";
 
 export default function Posts() {
   return (
@@ -7,8 +8,8 @@ export default function Posts() {
         <title>Posts | Ignews</title>
       </Head>
 
-      <main>
-        <div>
+      <main className={styles.container}>
+        <div className={styles.content}>
           <a href="">
             <time>02 de janeiro de 2021</time>
             <strong>Alguma coisa esta acontecendo enquanto eu estudo</strong>
