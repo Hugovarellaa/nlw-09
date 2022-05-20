@@ -1,20 +1,20 @@
-/* eslint-disable  */
 import Link from "next/link";
+import styles from "./styles.module.scss";
 
-export function Header (){
+export function Header() {
   return (
-    <header>
-      <div>
+    <header className={styles.headerContainer}>
+      <div className={styles.headerContent}>
         <img src="/images/logo.svg" alt="Logo Ignews" />
         <nav>
           <Link href="/">
-            <a >Home</a>
+            <a className={styles.active}>Home</a>
           </Link>
           <Link href="/posts">
-            <a >Posts</a>
+            <a>Posts</a>
           </Link>
         </nav>
       </div>
     </header>
-  )
+  );
 }
