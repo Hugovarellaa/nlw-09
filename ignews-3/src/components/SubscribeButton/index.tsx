@@ -10,6 +10,7 @@ export function SubscribeButton() {
     }
 
     //checkoutSession do stripe
+    
   }
 
   return (
