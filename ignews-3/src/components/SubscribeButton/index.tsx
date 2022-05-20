@@ -1,4 +1,6 @@
 import { signIn, useSession } from "next-auth/react";
+import { api } from "../../services/axios";
+import { getStripeJs } from "../../services/stripe-js";
 import styles from "./styles.module.scss";
 
 export function SubscribeButton() {
@@ -10,7 +12,14 @@ export function SubscribeButton() {
     }
 
     //checkoutSession do stripe
-    
+    try {
+      const response = await api.post("subscribe");
+      const { sessionId } = response.data;
+      const stripe = await getStripeJs();
+      await stripe.redirectToCheckout({ sessionId });
+    } catch (err) {
+      console.log({ err: err.message });
+    }
   }
 
   return (
