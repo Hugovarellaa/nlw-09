@@ -1,4 +1,5 @@
 import Head from "next/head";
+import styles from "./home.module.scss";
 
 export default function Home() {
   return (
@@ -7,12 +8,12 @@ export default function Home() {
         <title>Home | Ignews</title>
       </Head>
 
-      <main>
-        <section>
+      <main className={styles.container}>
+        <section className={styles.hero}>
           <span>👏 Hey, welcome</span>
           <h1>
             News about <br />
-            the <span>React world</span>
+            the <span>React </span>world
           </h1>
           <p>
             Get acess to all the publications
