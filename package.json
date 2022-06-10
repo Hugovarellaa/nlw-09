@@ -1,0 +1,26 @@
+{
+  "name": "refeito",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Hugovarellaa/refeito.git",
+  "author": "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 <hugovarellaa@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-import-helpers": "^1.2.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.3"
+  }
+}
