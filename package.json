@@ -1,10 +1,13 @@
 {
   "name": "refeito",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.ts",
   "repository": "git@github.com:Hugovarellaa/refeito.git",
   "author": "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 <hugovarellaa@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn ."
+  },
   "dependencies": {
     "express": "^4.18.1"
   },
