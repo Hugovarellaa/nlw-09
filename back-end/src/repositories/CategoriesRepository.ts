@@ -1,11 +1,11 @@
 import { Category } from "../model/Category";
+import {
+  ICategoriesRepository,
+  // eslint-disable-next-line prettier/prettier
+  ICreateCategoryDTO
+} from "./ICategoriesRepository";
 
-interface ICreateCategoryDTO {
-  name: string;
-  description: string;
-}
-
-class CategoriesRepositories {
+class CategoriesRepositories implements ICategoriesRepository {
   private categories: Category[];
 
   constructor() {
