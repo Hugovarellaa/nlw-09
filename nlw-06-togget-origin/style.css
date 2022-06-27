@@ -71,9 +71,8 @@ body {
   width: 100%;
 }
 
-
 #header.scroll {
-  // background: var(--base-color); 
+  // background: var(--base-color);
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -83,7 +82,7 @@ mudando a cor do header ao scrollar
 #header.scroll .logo span {
   color: white;
 }
-
+ 
 #header.scroll .icon-menu {
   color: white;
 } */
