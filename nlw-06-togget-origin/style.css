@@ -39,7 +39,6 @@ h2 {
 }
 
 .container {
-  max-width: 100%;
   margin: 0 1.5rem;
 }
 
@@ -58,9 +57,9 @@ h2 {
   display: flex;
 
   position: fixed;
-  z-index: 100;
   top: 0;
   left: 0;
+  z-index: 100;
   background-color: var(--body-color);
   width: 100%;
 }
@@ -70,6 +69,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 main {
@@ -80,7 +80,7 @@ main {
   padding: 5rem 0;
 }
 
-#Home {
+#home {
   overflow: hidden;
 }
 
@@ -91,15 +91,11 @@ main {
 .grid {
   display: grid;
   gap: 2rem;
-  overflow: hidden;
 
 }
 
 #home .images {
   position: relative;
-  border-radius: 0.25rem;
-  max-width: 100%;
-
 }
 
 #home .images::before {
@@ -108,9 +104,15 @@ main {
   position: absolute;
   left: 16.8%;
   bottom: 16.8%;
+
   height: 100%;
   width: 100%;
   z-index: 0;
+}
+
+#home .image img,
+#home .image::before {
+  border-radius: 0.25rem;
 }
 
 #home .images img {
