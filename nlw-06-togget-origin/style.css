@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+:root {
+  --hue: 159;
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+}
+
+body {
+  font: 400 1rem "Dm Sans", sans-serif;
+  background: var(--body-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+}
+
+h2 {
+  font: 700 1.87rem "Poppins", sans-serif;
+  color: var(--title-color);
+  -webkit-font-smoothing: auto;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 1.5rem;
+}
+
+.logo {
+  font: 700 1.31rem "Poppins", sans-serif;
+  color: var(--title-color);
+}
+
+.logo span {
+  color: var(--base-color);
+}
+
+#header {
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 2rem;
+  display: flex;
+
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: var(--body-color);
+  width: 100%;
+}
+
+#header nav {
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main {
+  margin-top: 4.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+#Home {
+  overflow: hidden;
+}
+
+#home .container {
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  overflow: hidden;
+
+}
+
+#home .images {
+  position: relative;
+  border-radius: 0.25rem;
+  max-width: 100%;
+
+}
+
+#home .images::before {
+  content: "";
+  background-color: var(--base-color-second);
+  position: absolute;
+  left: 16.8%;
+  bottom: 16.8%;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+#home .images img {
+  position: relative;
+  right: 2.93rem;
+
+}
+
+#home .text {
+  padding: 0 1.5rem;
+  text-align: center;
+}
+#home .text h2 {
+  margin-bottom: 1rem;
+}
+#home .text p {
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--base-color);
+  color: var(--text-color-light);
+  height: 3.5rem;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  font: 500 1rem "Dm Sans", sans-serif;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: var(--base-color-alt);
+}
+
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 65%, 88%, 0.34)
+  );
+}
