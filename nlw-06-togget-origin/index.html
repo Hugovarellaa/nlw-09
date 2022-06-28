@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Stylesheet CSS3 -->
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./assets/fonts/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Fonts CSS3 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,6 +46,7 @@
     </header>
 
     <main>
+      <!-- Home -->
       <section class="section" id="home">
         <div class="container grid">
           <div class="images">
@@ -60,9 +65,9 @@
           </div>
         </div>
       </section>
-
       <div class="divider-1"></div>
 
+      <!-- About -->
       <section class="section" id="about">
         <div class="container grid">
           <div class="images">
@@ -85,9 +90,9 @@
           </div>
         </div>
       </section>
-
       <div class="divider-2"></div>
 
+      <!-- Serviçes -->
       <section class="section" id="services">
         <div class="container grid">
           <header>
@@ -131,7 +136,88 @@
         </div>
       </section>
     </main>
+    <div class="divider-1"></div>
 
+    <!-- Testimonial -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <header>
+          <h2 class="title">Depoimentos de quem já passou por aqui</h2>
+        </header>
+        <div class="testimonials swiper">
+          <div class="swiper-wrapper">
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  <span>&ldquo;</span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Temporibus neque, debitis eius porro omnis aliquam
+                  voluptatibus itaque, iusto voluptatem laborum numquam veniam
+                  tempore molestias possimus tenetur quaerat? Odio, assumenda?
+                  Excepturi!
+                </p>
+                <cite>
+                  <img src="./assets/user-1.jpg" alt="" />
+                  Wanessa Souza
+                </cite>
+              </blockquote>
+            </div>
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  <span>&ldquo;</span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Temporibus neque, debitis eius porro omnis aliquam
+                  voluptatibus itaque, iusto voluptatem laborum numquam veniam
+                  tempore molestias possimus tenetur quaerat? Odio, assumenda?
+                  Excepturi!
+                </p>
+                <cite>
+                  <img src="./assets/user-2.jpg" alt="" />
+                  Ana Paula
+                </cite>
+              </blockquote>
+            </div>
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  <span>&ldquo;</span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Temporibus neque, debitis eius porro omnis aliquam
+                  voluptatibus itaque, iusto voluptatem laborum numquam veniam
+                  tempore molestias possimus tenetur quaerat? Odio, assumenda?
+                  Excepturi!
+                </p>
+                <cite>
+                  <img src="./assets/user-3.jpg" alt="" />
+                  Joana Souza
+                </cite>
+              </blockquote>
+            </div>
+            <div class="testimonial swiper-slide">
+              <blockquote>
+                <p>
+                  <span>&ldquo;</span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Temporibus neque, debitis eius porro omnis aliquam
+                  voluptatibus itaque, iusto voluptatem laborum numquam veniam
+                  tempore molestias possimus tenetur quaerat? Odio, assumenda?
+                  Excepturi!
+                </p>
+                <cite>
+                  <img src="./assets/user-4.jpg" alt="" />
+                  Maria Luana
+                </cite>
+              </blockquote>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>

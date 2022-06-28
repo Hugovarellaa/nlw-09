@@ -28,3 +28,15 @@ window.addEventListener("scroll", () => {
     header.classList.remove("scroll");
   }
 });
+
+// Testimonial Swiper-js
+
+const swiper = new Swiper(".swiper", {
+  slidesPerView: 1,
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+  },
+  mousewheel: true,
+  keyboard: true,
+});
