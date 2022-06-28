@@ -514,3 +514,19 @@ footer .social a:hover {
   transform: translateY(0)
 
 }
+
+
+// Media queries
+
+/* Ate 
+      Extra large devices : 1200 
+      Large devices : 1023
+      Large devices: 992
+      Medium devices : 768
+*/
+
+@media(min-width: 992px){
+  .title {
+    font-size: 2.25rem;
+  }
+}
