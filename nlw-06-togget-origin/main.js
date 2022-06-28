@@ -2,16 +2,19 @@ const nav = document.querySelector("#header nav");
 const toggle = document.querySelectorAll("nav .toggle");
 const links = document.querySelectorAll("#header ul li a");
 
+//fecha menu ao clickar nos links
 for (const link of links) {
   link.addEventListener("click", () => {
     nav.classList.remove("show");
   });
 }
 
+//abre menu
 function openMenu() {
   nav.classList.add("show");
 }
 
+//fecha menu
 function closeMenu() {
   nav.classList.remove("show");
 }
@@ -30,7 +33,6 @@ window.addEventListener("scroll", () => {
 });
 
 // Testimonial Swiper-js
-
 const swiper = new Swiper(".swiper", {
   slidesPerView: 1,
   pagination: {
@@ -48,15 +50,24 @@ const scrollReveal = ScrollReveal({
   duration: 700,
   reset: true,
 });
-
 scrollReveal.reveal(
   `
   #home .images ,#home .text, 
   #about images, #about .text,
   #services header, #services .card,
-  #testimonials header, #testimonials .tesimonials,
-  #contact .text, #contact .links
-  
+  #testimonials header, #testimonials .testimonials,
+  #contact .text, #contact .links,
+  #footer .brand, #footer .social
   `,
   { interval: 100 }
 );
+
+// Button back to top
+const backToTopButton = document.querySelector(".back-to-top");
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 560) {
+    backToTopButton.classList.add("show");
+  } else {
+    backToTopButton.classList.remove("show");
+  }
+});
