@@ -20,7 +20,7 @@ function closeMenu() {
 }
 
 // shadow header with  scroll
-window.addEventListener("scroll", () => {
+function changeHeader() {
   const header = document.querySelector("#header");
   const navHeight = header.offsetHeight;
   if (window.scrollY >= navHeight) {
@@ -30,7 +30,8 @@ window.addEventListener("scroll", () => {
     //scroll e menor que a altura do header
     header.classList.remove("scroll");
   }
-});
+}
+window.addEventListener("scroll", () => changeHeader());
 
 // Testimonial Swiper-js
 const swiper = new Swiper(".swiper", {
@@ -50,6 +51,7 @@ const scrollReveal = ScrollReveal({
   duration: 700,
   reset: true,
 });
+
 scrollReveal.reveal(
   `
   #home .images ,#home .text, 
@@ -63,11 +65,13 @@ scrollReveal.reveal(
 );
 
 // Button back to top
-const backToTopButton = document.querySelector(".back-to-top");
-window.addEventListener("scroll", () => {
+function backToTop() {
+  const backToTopButton = document.querySelector(".back-to-top");
   if (window.scrollY >= 560) {
     backToTopButton.classList.add("show");
   } else {
     backToTopButton.classList.remove("show");
   }
-});
+}
+
+window.addEventListener("scroll", () => backToTop());
