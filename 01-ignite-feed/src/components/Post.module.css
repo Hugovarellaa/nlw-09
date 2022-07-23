@@ -91,6 +91,18 @@
   margin-top: 1rem;
 }
 
+.commentForm > footer {
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+}
+
+.commentForm:focus-within footer{
+  visibility: visible;
+  opacity: 1;
+  max-height: none;
+}
+
 .commentForm button[type="submit"] {
   padding: 1rem 1.5rem;
   margin-top: 1rem;
