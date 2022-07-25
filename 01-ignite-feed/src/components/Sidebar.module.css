@@ -58,4 +58,11 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebarContainer footer a:hover {
+  background-color: var(--green-500);
+  color: var(--white);
 }
