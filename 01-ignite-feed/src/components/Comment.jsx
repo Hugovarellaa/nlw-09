@@ -25,8 +25,10 @@ export function Comment() {
           <p>Muito bom Devon, parabéns!! 👏👏</p>
         </div>
         <footer>
-          <ThumbsUp size={20} />
-          Aplaudir <span>20</span>
+          <button>
+            <ThumbsUp size={20} />
+            Aplaudir <span>20</span>
+          </button>
         </footer>
       </div>
     </div>
