@@ -56,4 +56,6 @@
   justify-content: center;
   text-decoration: none;
   font-weight: bold;
+
+  gap: 0.5rem;
 }
