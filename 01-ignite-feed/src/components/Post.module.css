@@ -90,3 +90,20 @@
   border-radius: 8px;
   margin-top: 1rem;
 }
+
+.commentForm button[type="submit"] {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border: 0;
+  background-color: var(--green-500);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+
+  transition: background-color 0.1s;
+}
+
+.commentForm button[type="submit"]:hover {
+  background-color: var(--green-300);
+}
