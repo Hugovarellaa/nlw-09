@@ -1,0 +1,59 @@
+.post {
+  background-color: var(--gray-800);
+  border-radius: 8px;
+  padding: 2.5rem;
+}
+
+.post + .post {
+  margin-top: 2rem;
+}
+
+.post > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post > header time {
+  color: var(--gray-400);
+  font-size: 0.875rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.authorInfo strong {
+  display: block;
+  color: var(--gray-100);
+  line-height: 1.6;
+}
+
+.authorInfo span {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--gray-400);
+}
+
+.postContent {
+  line-height: 1.6;
+  color: var(--gray-300);
+  margin-top: 1.5rem;
+}
+
+.postContent p {
+  margin-bottom: 1rem;
+}
+
+.postContent a {
+  font-weight: bold;
+  color: var(--green-500);
+  text-decoration: none;
+}
+
+.postContent a:hover {
+  color: var(--green-300);
+}
