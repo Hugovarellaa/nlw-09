@@ -1,8 +1,4 @@
-### 🔗 Link para o projeto online
 
-[Ignite-Feed](https://ignite-feed.vercel.app/)
-
-&nbsp;
 
 <div>
   <img src="./assets/capa.png" width="720p">
